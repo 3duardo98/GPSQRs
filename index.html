@@ -4,11 +4,12 @@
   <meta charset="utf-8">
   <title></title>
   <style>
-     body {
+      body {
         background-color: lightblue;
         text-align: center;
       }
-   .lds-ring {
+      
+      .lds-ring {
   display: inline-block;
   position: relative;
   width: 80px;
@@ -43,19 +44,21 @@
     transform: rotate(360deg);
   }
 }
- </style>
- </head>
- <body>
-   <script>
-      cont AS_URL_BASE ="https://script.google.com/macros/s/AKfycbxfDeYE1oxU59Xd2c_QnM74lcXFw3x8iA0hKq_WU3hJG0LO3bDzNmvpsBsBBMbM862i/exec ";
-          var url = document.location.href;
-          var k = url.substr(url.lastIndexOf("k=")+2);
-          
-        if(k){
-          fetch(AS_URL_BASE+'?k='+k)
-         .then(r => r.text())
-         .then((r) => {
-          console.log(r);
+
+  </style>
+</head>
+<body>
+  <script>
+     cont AS_URL_BASE ="https://script.google.com/macros/s/AKfycbxfDeYE1oxU59Xd2c_QnM74lcXFw3x8iA0hKq_WU3hJG0LO3bDzNmvpsBsBBMbM862i/exec ";
+    
+    var url = document.location.href;
+    var k = url.substr(url.lastIndexOf("k=")+2);
+    
+    if(k){
+      fetch(AS_URL_BASE+'?k='+k)
+      .then(r => r.text())
+      .then((r) => {
+        console.log(r);
         //document.write(r);
         if(r){
           document.location.replace(r);
@@ -63,8 +66,11 @@
       })
       .catch(err => console.log(err))
     }
-      
-   </script>
-    <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-  <body>
-  </html>
+
+  </script>
+  
+  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+  
+  
+</body>
+</html>
